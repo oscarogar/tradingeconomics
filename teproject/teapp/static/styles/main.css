@@ -1,0 +1,22 @@
+body{background-color:aliceblue;}
+.input{
+  width: auto;
+  text-align: center;
+  margin-top: 1rem;
+}
+.formInput{
+  text-align: center;
+  display:table-row;
+  align-items: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.sectionDiv{
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: auto;
+}

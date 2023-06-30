@@ -1,0 +1,76 @@
+{% extends 'header.html'%}
+{% load static %}
+{% block content %}
+<div class="b-example-divider"></div>
+
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Report</h2>
+
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+ 
+       
+        <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{country_1}}</h3>
+            <h5>Rating: {{country_1_rating}}</h5>
+            <h5>Outlook: {{country_1_outlook}} </h5>
+            <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                <img src="{% static 'images/stock_images.webp' %}" alt="Stock_img" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small>Read More: <a href="https://www.britannica.com/place/{{country_1}}" target="_blank">{{country_1}}</a> </small>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+       
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{country_2}}</h3>
+          <h5>Rating: {{country_2_rating}}</h5>
+          <h5>Outlook: {{country_2_outlook}}</h5>
+
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="{% static 'images/stock_images.webp' %}" alt="stock_img" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+              <small>Read More: <a href="https://www.britannica.com/place/{{country_2}}" target="_blank">{{country_2}}</a> </small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+  
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Verdict </h3>
+          {% if country_2_outlook == "Stable" and country_1_outlook == "Stable" %}
+          <h5>Invest In Any of these Countries</h5>
+          {% else %}
+          <h4>Only Invest in an economy with a Stable Outlook</h4>
+          {% endif %}
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="{% static 'images/stock_images.webp' %}" alt="stock_img" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+{% include 'footer.html' %}
